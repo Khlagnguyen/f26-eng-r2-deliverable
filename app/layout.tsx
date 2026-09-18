@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <div className="flex-col md:flex">
-            <div className="border-b">
+            <div className="bordls -l app/globals.csser-b">
               <div className="flex h-16 items-center px-4">
                 <Navbar className="mx-6" />
                 <div className="ml-auto flex items-center space-x-4">
