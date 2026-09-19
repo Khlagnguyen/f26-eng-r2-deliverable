@@ -23,10 +23,10 @@ export default function Content({ species, userId }: { species: Species[]; userI
   const [filter, setFilter] = useState("A-Z");
   const filteredSpecies = species.filter(
     (species) =>
-      species.scientific_name.toLowerCase().includes(query.toLowerCase()) ||
-      species.common_name?.toLowerCase().includes(query.toLowerCase()) ||
-      species.kingdom.toLowerCase().includes(query.toLowerCase()) ||
-      species.description?.toLowerCase().includes(query.toLowerCase()) ||
+      species.scientific_name.toLowerCase().includes(query.toLowerCase()) ??
+      species.common_name?.toLowerCase().includes(query.toLowerCase()) ??
+      species.kingdom.toLowerCase().includes(query.toLowerCase()) ??
+      species.description?.toLowerCase().includes(query.toLowerCase()) ??
       species.author.display_name?.toLowerCase().includes(query.toLowerCase()),
   );
   if (filter === "A-Z") {
