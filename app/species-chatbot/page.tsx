@@ -23,7 +23,5 @@ export default async function SpeciesChatBotLandingPage() {
     content: string;
   };
 
-  return (
-    <SpeciesChatbot userId={sessionId} existingChatLog={(chatlog?.chat as ChatMessage[] | null) ?? []}></SpeciesChatbot>
-  );
+  return <SpeciesChatbot userId={sessionId} existingChatLog={(chatlog?.chat as ChatMessage[]) ?? []}></SpeciesChatbot>;
 }

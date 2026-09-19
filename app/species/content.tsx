@@ -21,12 +21,13 @@ type Species = Omit<Database["public"]["Tables"]["species"]["Row"], "author"> & 
 export default function Content({ species, userId }: { species: Species[]; userId: string }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("A-Z");
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const filteredSpecies = species.filter(
     (species) =>
-      species.scientific_name.toLowerCase().includes(query.toLowerCase()) ??
-      species.common_name?.toLowerCase().includes(query.toLowerCase()) ??
-      species.kingdom.toLowerCase().includes(query.toLowerCase()) ??
-      species.description?.toLowerCase().includes(query.toLowerCase()) ??
+      species.scientific_name.toLowerCase().includes(query.toLowerCase()) ||
+      species.common_name?.toLowerCase().includes(query.toLowerCase()) ||
+      species.kingdom.toLowerCase().includes(query.toLowerCase()) ||
+      species.description?.toLowerCase().includes(query.toLowerCase()) ||
       species.author.display_name?.toLowerCase().includes(query.toLowerCase()),
   );
   if (filter === "A-Z") {
