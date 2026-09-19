@@ -30,7 +30,7 @@ export default async function SpeciesList() {
     )
   `,
     )
-    .order("id", { ascending: false });
+    .order("scientific_name", { ascending: true });
 
   //Packaged all content into a client wrapper to allow useStates
   return <Content species={species ?? []} userId={sessionId}></Content>;

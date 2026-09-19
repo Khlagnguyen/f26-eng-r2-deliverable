@@ -3,7 +3,7 @@ import { SearchIcon } from "lucide-react";
 //UI from https://prebuiltui.com/components/search-bar
 export default function Search({ query, setQuery }: { query: string; setQuery: (query: string) => void }) {
   return (
-    <div className="flex h-[46px] w-full max-w-xl items-center gap-2 overflow-hidden rounded-full border  pl-4">
+    <div className="flex h-[46px] w-[400px] items-center gap-2 overflow-hidden rounded-full border  pl-4">
       <SearchIcon className="size-5"></SearchIcon>
       <input
         type="text"
