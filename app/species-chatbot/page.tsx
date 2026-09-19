@@ -18,10 +18,10 @@ export default async function SpeciesChatBotLandingPage() {
 
   const { data: chatlog } = await supabase.from("chatlogs").select("chat").eq("userid", sessionId).maybeSingle();
 
-  type ChatMessage = {
+  interface ChatMessage {
     role: "user" | "bot";
     content: string;
-  };
+  }
 
   return <SpeciesChatbot userId={sessionId} existingChatLog={(chatlog?.chat as ChatMessage[]) ?? []}></SpeciesChatbot>;
 }
